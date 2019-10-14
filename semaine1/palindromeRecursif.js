@@ -17,3 +17,5 @@ function estPalindrome(chaine){
 estPalindrome("A")
 estPalindrome("BoB")
 estPalindrome("ANOYNA")
+if(process.argv[2])
+    estPalindrome(process.argv[2])
