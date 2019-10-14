@@ -1,3 +1,4 @@
-Exercices Alyra
+Exercices d'Alyra
 
-series d'exercices
+
+Series d'exercice
