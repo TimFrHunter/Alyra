@@ -1,2 +1,5 @@
 console.log("Bonjour Alyra")
-console.log(Math.random())
+let rd = Math.floor(Math.random() * 10) 
+console.log("le nombre aléatoire est", rd, "!")
+console.log(`le nombre aléatoire est ${rd} ! `)
+console.log({rd})
