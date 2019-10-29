@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+            <div>
+                Conversion Hexadécimal vers Décimal: <input type="text">
+                <button onclick="hexToDec(this)" >Valider</button>
+                <span></span>
+            </div>
+
+
+            <div>
+                Conversion Décimal vers Hexadécimal: <input type="text">
+                <button onclick="decToHex(this)" >Valider</button>
+                <span></span>
+            </div>
+
+            <div>
+                Conversion Hexadécimal little endian vers Hexadécimal: <input type="text">
+                <button onclick="lilHexToHex(this)" >Valider</button>
+                <span></span>
+            </div>
+
+            <div>
+                Conversion VarInt vers Décimal: <input type="text">
+                <button onclick="varIntToDec(this)" >Valider</button>
+                <span></span>
+            </div>
+
+
+            <div>
+                Bitcoin Block Parser JSON:<br/>
+                <textarea style="float:left;width: 49%;height: 600px;" onpaste="parsingJson(this)" onkeyup="parsingJson(this)"></textarea>
+                <textarea style="width: 50%;height: 600px;"></textarea>
+            </div>
+
+           
+
+
+    <script type="text/javascript" src="./conversion.js" > </script>  
+    <script type="text/javascript">
+        
+        function hexToDec(el){
+            var parent =  el.parentElement;
+            var value = parent.getElementsByTagName("input")[0].value;
+            parent.getElementsByTagName("span")[0].innerHTML = conversionHexToDeci(value);
+
+        }
+        function decToHex(el){
+            var parent =  el.parentElement;
+            var value = parent.getElementsByTagName("input")[0].value;
+            parent.getElementsByTagName("span")[0].innerHTML = conversionDeciToHex(value);
+
+        }
+        function lilHexToHex(el){
+            var parent =  el.parentElement;
+            var value = parent.getElementsByTagName("input")[0].value;
+            parent.getElementsByTagName("span")[0].innerHTML = conversionHexLittleIndianToHex(value);
+
+        }
+        function varIntToDec(el){
+            var parent =  el.parentElement;
+            var value = parent.getElementsByTagName("input")[0].value;
+            parent.getElementsByTagName("span")[0].innerHTML = conversionVarIntToDecimal(value);
+
+        }
+        function parsingJson(el){
+            var valueAsString = el.value
+            var valueAsJson = JSON.parse(valueAsString)
+            var valueAsStringIndentation = JSON.stringify(valueAsJson, null, 2)// indentation de 2 espaces
+            el.parentElement.getElementsByTagName("textarea")[1].value = valueAsStringIndentation
+        }
+
+      
+    </script>
+    </body>
+</html>
