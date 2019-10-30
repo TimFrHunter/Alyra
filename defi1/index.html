@@ -1,42 +1,108 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            *{
+                text-transform: uppercase;
+                color: #60a3bc;
+                background: #1e2227;
+            }
+            h1{
+                text-align: center;
+            }
+            .elements{
+                font-size: 14px;
+                float:left;
+                width:40%;
+                padding: 20px;
+                line-height:2;
+            }
+            .separation{
+                clear: both;
+            }
 
+            #container{
+                width:50%;
+                margin: auto;
+            }
+            .right{
+                float:right;
+            }
+
+            .btn{
+                color: #fff !important;
+                font-size: 13px;
+                text-decoration: none;
+                background: #60a3bc;
+                padding: 5px;
+                border-radius: 50px;
+                display: inline-block;
+                border: none;
+                margin-left: 5px;
+            }
+            input{
+                border: 1px solid #60a3bc;
+                height:19px;
+            }
+            span{
+                color: #28ff01;
+                margin-left: 5px;
+                font-size: 16px;
+
+            }
+            textarea:nth-child(4){
+                color:#f5dd68
+            }
+            label{
+                margin: 15px 0;
+                display: inline-block;
+            }
+
+            @media (max-width: 1600px){
+                #container{
+                    width:80%;
+                }
+               
+            }
+
+        </style>
     </head>
     <body>
+        <h1>Outil d’analyse bitcoin</h1>
+        <div id="container">
 
-            <div>
-                Conversion Hexadécimal vers Décimal: <input type="text">
-                <button onclick="hexToDec(this)" >Valider</button>
+            <div class="elements">
+                Conversion Hexadécimal vers Décimal:<br/>
+                <input type="text"><button class="btn" onclick="hexToDec(this)" >Valider</button>
                 <span></span>
             </div>
 
 
-            <div>
-                Conversion Décimal vers Hexadécimal: <input type="text">
-                <button onclick="decToHex(this)" >Valider</button>
+            <div class="elements right">
+                Conversion Décimal vers Hexadécimal:<br/>
+                <input type="text"><button class="btn" onclick="decToHex(this)" >Valider</button>
                 <span></span>
             </div>
 
-            <div>
-                Conversion Hexadécimal little endian vers Hexadécimal: <input type="text">
-                <button onclick="lilHexToHex(this)" >Valider</button>
+            <div class="elements separation">
+                Conversion Hex little endian vers Hex:<br/>
+                <input type="text"><button class="btn" onclick="lilHexToHex(this)" >Valider</button>
                 <span></span>
             </div>
 
-            <div>
-                Conversion VarInt vers Décimal: <input type="text">
-                <button onclick="varIntToDec(this)" >Valider</button>
+            <div class="elements right">
+                Conversion VarInt vers Décimal: <br/> 
+                <input type="text"> <button class="btn" onclick="varIntToDec(this)" >Valider</button>
                 <span></span>
             </div>
+        </div>
 
-
-            <div>
-                Bitcoin Block Parser JSON:<br/>
-                <textarea style="float:left;width: 49%;height: 600px;" onpaste="parsingJson(this)" onkeyup="parsingJson(this)"></textarea>
-                <textarea style="width: 50%;height: 600px;"></textarea>
+            <div class="separation">
+                <label>Bitcoin Block Parser JSON:</label><br/>
+                <textarea spellcheck="false" style="float:left;width: 49%;height: 600px;" onpaste="parsingJson(this)" onkeyup="parsingJson(this)"></textarea>
+                <textarea spellcheck="false" style="width: 49%;height: 600px;"></textarea>
             </div>
-
+            
            
 
 
